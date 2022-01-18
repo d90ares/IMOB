@@ -1,33 +1,29 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-class Imagem(models.Model):
-    img = models.ImageField(upload_to='img')
-
+class DiasVisita(models.Model):
+    dia = models.CharField(max_length=20)
     def __str__(self) -> str:
-        return self.img.url
+      return self.dia
 
 class Cidade(models.Model):
     nome = models.CharField(max_length=30)
-
     def __str__(self) -> str:
-        return self.nome
+      return self.nome
 
-class DiasVisita(models.Model):
-    dia = models.CharField(max_length=20)
-    
+class Imagem(models.Model):
+    img = models.ImageField(upload_to='img')
     def __str__(self) -> str:
-        return self.dia
+      return self.img.url
 
 class Horario(models.Model):
     horario = models.TimeField()
-
     def __str__(self) -> str:
-        return str(self.horario)
+      return str(self.horario)
 
 class Imovei(models.Model):
     choices = (('V', 'Venda'),
-               ('A', 'Aluguel'))
+                ('A', 'Aluguel'))
 
     choices_imovel = (('A', 'Apartamento'),
                       ('C', 'Casa'))
@@ -46,7 +42,7 @@ class Imovei(models.Model):
     horarios = models.ManyToManyField(Horario)
 
     def __str__(self) -> str:
-        return self.rua
+      return self.rua
 
 
 class Visitas(models.Model):
@@ -61,12 +57,12 @@ class Visitas(models.Model):
     choices_status = (('A', 'Agendado'),
                       ('F', 'Finalizado'),
                       ('C', 'Cancelado'))
+
     imovel = models.ForeignKey(Imovei, on_delete=models.DO_NOTHING)
     usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
     dia = models.CharField(max_length=20)
     horario = models.TimeField()
     status = models.CharField(max_length=1, choices=choices_status, default="A")
 
-
     def __str__(self) -> str:
-        return self.usuario.username
+      return self.usuario.username
