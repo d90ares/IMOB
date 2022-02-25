@@ -140,3 +140,6 @@ MESSAGE_TAGS = {
     constants.INFO: 'alert-info',
     constants.WARNING: 'alert-warning',
 }
+
+THOUSAND_SEPARATOR='.',
+USE_THOUSAND_SEPARATOR=True

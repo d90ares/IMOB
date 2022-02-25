@@ -1,5 +1,7 @@
+from unicodedata import decimal
 from django.db import models
 from django.contrib.auth.models import User
+from django.forms import DecimalField
 
 class DiasVisita(models.Model):
     dia = models.CharField(max_length=20)
@@ -29,7 +31,7 @@ class Imovei(models.Model):
                       ('C', 'Casa'))
 
     imagens = models.ManyToManyField(Imagem)
-    valor = models.FloatField()
+    valor = models.DecimalField(max_digits=10, decimal_places=2)
     quartos = models.IntegerField()
     tamanho = models.FloatField()
     cidade = models.ForeignKey(Cidade, on_delete=models.DO_NOTHING)
