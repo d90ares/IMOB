@@ -140,11 +140,5 @@ MESSAGE_TAGS = {
     constants.INFO: 'alert-info',
     constants.WARNING: 'alert-warning',
 }
-<<<<<<< HEAD
-
 THOUSAND_SEPARATOR='.',
 USE_THOUSAND_SEPARATOR=True
-=======
-THOUSAND_SEPARATOR='.',
-USE_THOUSAND_SEPARATOR=True
->>>>>>> fd30a77a3e9442b3640ec7874843da5a85a80e3c
