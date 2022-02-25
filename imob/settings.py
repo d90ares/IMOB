@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-ma(p5v#*=s#uy4e2)p08k@#wfz16*xn#jbaxq2=wlyd0tpzrjp
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -140,6 +140,11 @@ MESSAGE_TAGS = {
     constants.INFO: 'alert-info',
     constants.WARNING: 'alert-warning',
 }
+<<<<<<< HEAD
 
 THOUSAND_SEPARATOR='.',
 USE_THOUSAND_SEPARATOR=True
+=======
+THOUSAND_SEPARATOR='.',
+USE_THOUSAND_SEPARATOR=True
+>>>>>>> fd30a77a3e9442b3640ec7874843da5a85a80e3c
